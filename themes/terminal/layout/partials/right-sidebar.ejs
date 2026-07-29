@@ -1,0 +1,45 @@
+<section class="terminal-panel">
+  <h2><%- theme.about.title || 'ABOUT' %></h2>
+  <div class="about-copy">
+    <% (theme.about.lines || []).forEach(function(line) { %>
+      <p><%- line %></p>
+    <% }); %>
+  </div>
+  <% if (theme.about.links) { %>
+    <div class="external-links">
+      <div>Find me elsewhere:</div>
+      <% Object.keys(theme.about.links).forEach(function(label) { %>
+        <a href="<%- url_for(theme.about.links[label]) %>">&gt; <%- label %></a>
+      <% }); %>
+    </div>
+  <% } %>
+</section>
+
+<section class="terminal-panel">
+  <h2>RECENT TAGS</h2>
+  <div class="tag-stack">
+    <%
+      var recentTags = [];
+      if (site.tags && site.tags.sort) {
+        site.tags.sort('length', -1).limit(theme.recent_tags_limit || 8).each(function(tag) {
+          recentTags.push(tag);
+        });
+      }
+    %>
+    <% recentTags.forEach(function(tag) { %>
+      <a href="<%- url_for(tag.path) %>"><span>#<%- tag.name %></span><em><%- tag.length %></em></a>
+    <% }); %>
+  </div>
+</section>
+
+<section class="terminal-panel">
+  <h2>NOW</h2>
+  <div class="now-list">
+    <% (theme.now || []).forEach(function(item) { %>
+      <div>
+        <span>&gt; <%- item.label %></span>
+        <p><%- item.value %></p>
+      </div>
+    <% }); %>
+  </div>
+</section>

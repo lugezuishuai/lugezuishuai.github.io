@@ -1,0 +1,31 @@
+<article class="terminal-article">
+  <div class="prompt-line"><span>$</span> cat <a href="<%- url_for('/') %>"><%- (page.source || page.slug + '.md') %></a></div>
+  <header class="article-head">
+    <h1><%- page.title || '*Untitled' %></h1>
+    <div class="article-meta">
+      <time datetime="<%- date_xml(page.date) %>"><%- date(page.date, theme.date_format) %></time>
+      <% if (page.tags && page.tags.length) { %>
+        <span>/</span>
+        <% page.tags.each(function(tag) { %>
+          <a href="<%- url_for(tag.path) %>">#<%- tag.name %></a>
+        <% }); %>
+      <% } %>
+    </div>
+  </header>
+  <%
+    var leadImage = page.featured_image || page.cover || '';
+    if (leadImage && !/^(https?:)?\/\//.test(leadImage) && leadImage.charAt(0) !== '/') {
+      var leadBase = (page.path || '').replace(/index\.html$/, '');
+      if (leadBase && leadBase.charAt(leadBase.length - 1) !== '/') leadBase += '/';
+      leadImage = leadBase + leadImage;
+    }
+  %>
+  <% if (leadImage) { %>
+    <figure class="article-cover">
+      <img src="<%- url_for(leadImage) %>" alt="">
+    </figure>
+  <% } %>
+  <div class="terminal-content">
+    <%- page.content %>
+  </div>
+</article>

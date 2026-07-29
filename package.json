@@ -1,0 +1,33 @@
+{
+  "name": "idevlab.cn",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hexo generate",
+    "check:images": "node tools/check-image-size.mjs",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "prepare": "husky",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "8.1.2"
+  },
+  "dependencies": {
+    "hexo": "^8.1.2",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
+    "hexo-renderer-pug": "^3.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}

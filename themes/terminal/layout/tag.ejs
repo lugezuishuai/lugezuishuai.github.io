@@ -1,0 +1,15 @@
+<section class="command-section">
+  <% if (is_tag()) { %>
+    <div class="prompt-line"><span>$</span> grep tag:<%- page.tag %> posts/</div>
+    <h1 class="terminal-page-title">Tag: <%- page.tag %></h1>
+    <%- partial('partials/post-list', { posts: page.posts }) %>
+  <% } else { %>
+    <div class="prompt-line"><span>$</span> ls tags/</div>
+    <h1 class="terminal-page-title">Tags</h1>
+    <div class="directory-grid">
+      <% site.tags.sort('name', 1).each(function(tag) { %>
+        <a href="<%- url_for(tag.path) %>">#<%- tag.name %> <em><%- tag.length %></em></a>
+      <% }); %>
+    </div>
+  <% } %>
+</section>

@@ -1,0 +1,23 @@
+<section class="command-section">
+  <div class="prompt-line"><span>$</span> <%- theme.welcome.command %></div>
+  <div class="welcome-box">
+    <div>
+      <p><%- theme.welcome.title %></p>
+      <% (theme.welcome.lines || []).forEach(function(line) { %>
+        <p><%- line %></p>
+      <% }); %>
+      <strong><%- theme.welcome.accent %></strong>
+    </div>
+    <pre aria-hidden="true">
+      /\        __
+  /\ /  \  /\  /  \    __
+ /  V    \/  \/ /\ \  /  \
+/__/ \___/\___/  \_\/____\
+    </pre>
+  </div>
+</section>
+
+<section class="command-section">
+  <div class="prompt-line"><span>$</span> ls posts/</div>
+  <%- partial('partials/post-list', { posts: page.posts }) %>
+</section>

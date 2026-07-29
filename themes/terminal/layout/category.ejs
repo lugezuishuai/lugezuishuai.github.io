@@ -1,0 +1,15 @@
+<section class="command-section">
+  <% if (is_category()) { %>
+    <div class="prompt-line"><span>$</span> grep category:<%- page.category %> posts/</div>
+    <h1 class="terminal-page-title">Category: <%- page.category %></h1>
+    <%- partial('partials/post-list', { posts: page.posts }) %>
+  <% } else { %>
+    <div class="prompt-line"><span>$</span> ls categories/</div>
+    <h1 class="terminal-page-title">Categories</h1>
+    <div class="directory-grid">
+      <% site.categories.sort('name', 1).each(function(category) { %>
+        <a href="<%- url_for(category.path) %>">&gt; <%- category.name %> <em><%- category.length %></em></a>
+      <% }); %>
+    </div>
+  <% } %>
+</section>

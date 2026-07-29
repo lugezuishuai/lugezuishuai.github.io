@@ -1,0 +1,33 @@
+<%
+var searchItems = [];
+site.posts.sort('date', -1).each(function(post) {
+  var tags = [];
+  var categories = [];
+  if (post.tags) {
+    post.tags.each(function(tag) {
+      tags.push(tag.name);
+    });
+  }
+  if (post.categories) {
+    post.categories.each(function(category) {
+      categories.push(category.name);
+    });
+  }
+  var plainText = strip_html(post.description || post.excerpt || post.content || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  searchItems.push({
+    title: post.title || 'Untitled',
+    url: url_for(post.path),
+    date: date(post.date, theme.date_format),
+    tags: tags,
+    categories: categories,
+    text: [post.title, post.description, plainText, tags.join(' '), categories.join(' ')].filter(Boolean).join(' ')
+  });
+});
+var searchJson = JSON.stringify(searchItems)
+  .replace(/</g, '\\u003c')
+  .replace(/>/g, '\\u003e')
+  .replace(/&/g, '\\u0026');
+%>
+<script id="terminal-search-data" type="application/json"><%- searchJson %></script>

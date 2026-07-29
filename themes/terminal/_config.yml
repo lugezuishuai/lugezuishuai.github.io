@@ -1,0 +1,58 @@
+language: zh-CN
+
+site_brand_name: jackson
+terminal_title: "jackson-blog"
+favicon: /favicon.png
+
+stylesheets:
+  - /css/terminal.css
+
+scripts:
+  - /js/search.js
+  - /js/system-info.js
+  - /js/theme-switcher.js
+  - /js/keyboard-shortcuts.js
+
+menu:
+  _home: /
+  _archives: /archives/
+  _categories: /categories/
+  _tags: /tags/
+  _about: /about/
+
+profile:
+  identity: jackson-blog
+  role: builder & learner
+  image: /profile_cover.png
+  lines:
+    - "> build. write. explore."
+    - "> always learning"
+
+welcome:
+  command: cat welcome.txt
+  title: Welcome to Jackson's terminal-based blog.
+  lines:
+    - 这里记录技术、产品与日常思考。
+    - 当前内容为用于验证站点结构的 demo。
+  accent: Stay curious. Keep building.
+
+about:
+  title: ABOUT
+  lines:
+    - 记录技术实践与思考
+    - 保持好奇，持续构建
+    - 分享学习过程中的发现
+  links:
+    GitHub: https://github.com/lugezuishuai
+
+now:
+  - label: 正在学习
+    value: AI 与软件工程
+  - label: 正在构建
+    value: Jackson Blog
+  - label: 最近在读
+    value: Demo Content
+
+recent_tags_limit: 8
+date_format: YYYY-MM-DD
+footer_text: keep learning, keep shipping.

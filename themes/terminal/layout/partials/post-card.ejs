@@ -1,0 +1,42 @@
+<%
+  function postImageUrl(post) {
+    var image = post.featured_image || post.cover || '';
+    if (!image && post.photos && post.photos.length) image = post.photos[0];
+    if (!image) return '';
+    if (/^(https?:)?\/\//.test(image) || image.charAt(0) === '/') return url_for(image);
+    var base = (post.path || '').replace(/index\.html$/, '');
+    if (base && base.charAt(base.length - 1) !== '/') base += '/';
+    return url_for(base + image);
+  }
+  var imageUrl = postImageUrl(post);
+  var summary = post.description || strip_html(post.excerpt || post.content || '');
+  summary = summary.replace(/\s+/g, ' ').trim();
+  if (summary.length > 82) summary = summary.slice(0, 82) + '...';
+%>
+<article class="terminal-post-card <%- imageUrl ? 'has-thumb' : 'no-thumb' %>">
+  <% if (imageUrl) { %>
+    <a class="post-thumb" href="<%- url_for(post.path) %>" aria-label="<%- post.title || 'Untitled' %>">
+      <img src="<%- imageUrl %>" alt="">
+    </a>
+  <% } %>
+  <div class="post-card-body">
+    <div class="post-card-head">
+      <a class="post-card-title" href="<%- url_for(post.path) %>">
+        <span class="file-icon">[]</span>
+        <%- String(index + 1).padStart(2, '0') %>_<%- post.title || 'Untitled' %>.md
+      </a>
+      <time datetime="<%- date_xml(post.date) %>">[<%- date(post.date, theme.date_format) %>]</time>
+    </div>
+    <% if (summary) { %>
+      <p><%- summary %></p>
+    <% } %>
+    <% if (post.tags && post.tags.length) { %>
+      <div class="post-tags">
+        <% post.tags.each(function(tag) { %>
+          <a href="<%- url_for(tag.path) %>">#<%- tag.name %></a>
+        <% }); %>
+      </div>
+    <% } %>
+    <a class="read-more" href="<%- url_for(post.path) %>">read more -&gt;</a>
+  </div>
+</article>

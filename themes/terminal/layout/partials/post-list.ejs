@@ -1,0 +1,6 @@
+<div class="terminal-post-list">
+  <% posts.each(function(post, index) { %>
+    <%- partial('post-card', { post: post, index: index }) %>
+  <% }); %>
+</div>
+<%- partial('paginator') %>

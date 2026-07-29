@@ -1,0 +1,97 @@
+<section class="terminal-panel profile-panel">
+  <% if (theme.profile.image) { %>
+    <img class="profile-image" src="<%- url_for(theme.profile.image) %>" alt="">
+  <% } %>
+  <div class="profile-name"><%- theme.profile.identity %></div>
+  <div class="profile-role"><%- theme.profile.role %></div>
+  <% if (theme.profile.lines) { %>
+    <div class="profile-lines">
+      <% theme.profile.lines.forEach(function(line) { %>
+        <div><%- line %></div>
+      <% }); %>
+    </div>
+  <% } %>
+</section>
+
+<section class="terminal-panel">
+  <h2>NAVIGATION</h2>
+  <nav class="terminal-nav">
+    <% Object.keys(theme.menu || {}).forEach(function(label) { %>
+      <%
+        var navTarget = String(label).replace(/^_/, '');
+      %>
+      <a href="<%- url_for(theme.menu[label]) %>" data-terminal-nav="<%- navTarget %>"><span>&gt;</span> <%- label %></a>
+    <% }); %>
+  </nav>
+</section>
+
+<section class="terminal-panel">
+  <h2>SEARCH</h2>
+  <label class="search-line" aria-label="Search">
+    <span>$</span>
+    <input type="search" placeholder='grep -i "search..."' data-terminal-search-input aria-keyshortcuts="/">
+  </label>
+  <div class="search-results" data-terminal-search-results hidden></div>
+</section>
+
+<section class="terminal-panel shortcut-panel" aria-label="Keyboard shortcuts">
+  <h2>SHORTCUTS</h2>
+  <dl class="shortcut-list">
+    <div>
+      <dt><kbd>/</kbd></dt>
+      <dd>search</dd>
+    </div>
+    <div>
+      <dt><kbd>Esc</kbd></dt>
+      <dd>clear search</dd>
+    </div>
+    <div>
+      <dt><kbd>j</kbd><kbd>k</kbd></dt>
+      <dd>scroll</dd>
+    </div>
+    <div>
+      <dt><kbd>g</kbd><kbd>g</kbd> / <kbd>G</kbd></dt>
+      <dd>top / bottom</dd>
+    </div>
+    <div>
+      <dt><kbd>[</kbd><kbd>]</kbd></dt>
+      <dd>prev / next</dd>
+    </div>
+    <div>
+      <dt><kbd>t</kbd></dt>
+      <dd>theme</dd>
+    </div>
+    <div>
+      <dt><kbd>g</kbd> + <kbd>h</kbd><kbd>a</kbd><kbd>c</kbd><kbd>t</kbd><kbd>b</kbd></dt>
+      <dd>nav</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="terminal-panel system-panel">
+  <h2>SYSTEM INFO</h2>
+  <dl>
+    <div><dt>OS:</dt><dd data-terminal-os>macOS</dd></div>
+    <div><dt>Shell:</dt><dd>zsh 5.9</dd></div>
+    <div class="theme-row">
+      <dt>Theme:</dt>
+      <dd>
+        <button class="theme-current" type="button" data-terminal-theme-current aria-keyshortcuts="T">terminal-green</button>
+        <div class="theme-options" aria-label="Theme colors">
+          <button type="button" data-terminal-theme-choice="green" aria-label="terminal-green"></button>
+          <button type="button" data-terminal-theme-choice="amber" aria-label="terminal-amber"></button>
+          <button type="button" data-terminal-theme-choice="cyan" aria-label="terminal-cyan"></button>
+          <button type="button" data-terminal-theme-choice="magenta" aria-label="terminal-magenta"></button>
+          <button type="button" data-terminal-theme-choice="white" aria-label="terminal-white"></button>
+        </div>
+      </dd>
+    </div>
+    <div><dt>Total posts:</dt><dd><%- site.posts.length %></dd></div>
+    <div><dt>Last update:</dt><dd><%- date(site.posts.sort('date', -1).first().date, theme.date_format) %></dd></div>
+  </dl>
+</section>
+
+<footer class="terminal-footer">
+  <div>© <%- new Date().getFullYear() %> <%- config.author || theme.site_brand_name %></div>
+  <div>&gt; <%- theme.footer_text %></div>
+</footer>

@@ -1,0 +1,10 @@
+<% if (page.total > 1) { %>
+  <nav class="terminal-pagination" aria-label="Pagination">
+    <%- paginator({
+      prev_text: 'prev <-',
+      next_text: 'next ->',
+      end_size: 1,
+      mid_size: 1
+    }) %>
+  </nav>
+<% } %>

@@ -1,0 +1,81 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<% if (config.author) { %>
+  <meta name="author" content="<%- config.author %>">
+<% } %>
+<% if (config.description) { %>
+  <meta name="description" content="<%- config.description %>">
+<% } %>
+<% if (config.keywords) { %>
+  <meta name="keywords" content="<%- config.keywords %>">
+<% } %>
+<%
+var title = page.title;
+if (is_archive()) {
+  title = __('Archive');
+  if (is_month()) title += ': ' + page.year + '/' + page.month;
+  if (is_year()) title += ': ' + page.year;
+} else if (is_category()) {
+  title = __('Category') + ': ' + page.category;
+} else if (is_tag()) {
+  title = __('Tag') + ': ' + page.tag;
+}
+%>
+<title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+<% if (theme.favicon) { %>
+  <link rel="icon" href="<%- url_for(theme.favicon) %>">
+<% } %>
+<script>
+  (function () {
+    var themes = ["green", "amber", "cyan", "magenta", "white"];
+    var theme = "green";
+    try {
+      var savedTheme = localStorage.getItem("terminal-theme");
+      if (themes.indexOf(savedTheme) !== -1) theme = savedTheme;
+    } catch (error) {
+    }
+    document.documentElement.dataset.terminalTheme = theme;
+  })();
+</script>
+<style>
+  html,
+  body {
+    background: #060708;
+    color: #e7e7df;
+    color-scheme: dark;
+  }
+
+  html[data-terminal-theme="amber"],
+  html[data-terminal-theme="amber"] body {
+    background: #090806;
+    color: #f1e8d2;
+    color-scheme: dark;
+  }
+
+  html[data-terminal-theme="cyan"],
+  html[data-terminal-theme="cyan"] body {
+    background: #04090a;
+    color: #ddf4f7;
+    color-scheme: dark;
+  }
+
+  html[data-terminal-theme="magenta"],
+  html[data-terminal-theme="magenta"] body {
+    background: #090609;
+    color: #f2e5ef;
+    color-scheme: dark;
+  }
+
+  html[data-terminal-theme="white"],
+  html[data-terminal-theme="white"] body {
+    background: #f4f3ed;
+    color: #202326;
+    color-scheme: light;
+  }
+</style>
+<% if (theme.stylesheets && theme.stylesheets.length > 0) { %>
+  <% theme.stylesheets.forEach(function(stylesheet) { %>
+    <link rel="stylesheet" href="<%- url_for(stylesheet) %>">
+  <% }); %>
+<% } %>
