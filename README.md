@@ -83,6 +83,8 @@ tags:
 categories:
   - [React]
 featured_image: ./cover.jpg
+series: 大模型上下文工程实践
+series_order: 1
 ---
 ```
 
@@ -93,8 +95,12 @@ featured_image: ./cover.jpg
 - `tags`：文章标签，可配置多个。
 - `categories`：文章分类。
 - `featured_image`：首页缩略图和文章封面，必须使用本地图片。
+- `series`：可选，系列名称；同一系列的文章使用相同值。
+- `series_order`：可选，文章在系列中的阅读顺序，从 `0` 开始递增。
 
 文章页会由 `tocbot` 根据二至四级标题自动生成目录，无需在 Markdown 中添加目录占位符。桌面端目录显示在右侧栏并随滚动高亮当前章节，移动端显示在正文上方。
+
+配置 `series` 和 `series_order` 后，文章页脚会自动显示该系列的“上一章”和“下一章”导航。普通文章不需要配置这两个字段。
 
 ## 图片规范
 

@@ -1,6 +1,8 @@
 ---
-title: 第 5 章：检索增强生成
+title: 《大模型上下文工程实践》- 检索增强生成
 date: 2025-09-30 10:00:00
+series: 大模型上下文工程实践
+series_order: 5
 tags:
   - Agent
 categories:

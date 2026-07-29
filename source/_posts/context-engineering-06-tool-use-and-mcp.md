@@ -1,6 +1,8 @@
 ---
-title: 第 6 章：工具使用与 MCP
+title: 《大模型上下文工程实践》- 工具使用与 MCP
 date: 2025-09-20 10:00:00
+series: 大模型上下文工程实践
+series_order: 6
 tags:
   - Agent
 categories:

@@ -1,6 +1,8 @@
 ---
-title: 第 3 章：提示词技术
+title: 《大模型上下文工程实践》- 提示词技术
 date: 2025-10-20 10:00:00
+series: 大模型上下文工程实践
+series_order: 3
 tags:
   - Agent
 categories:

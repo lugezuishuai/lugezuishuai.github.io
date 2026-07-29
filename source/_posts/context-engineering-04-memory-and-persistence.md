@@ -1,6 +1,8 @@
 ---
-title: 第 4 章：记忆系统与持久化
+title: 《大模型上下文工程实践》- 记忆系统与持久化
 date: 2025-10-10 10:00:00
+series: 大模型上下文工程实践
+series_order: 4
 tags:
   - Agent
 categories:

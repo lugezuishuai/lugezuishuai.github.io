@@ -1,6 +1,8 @@
 ---
-title: 序章：大模型上下文工程实践
+title: 《大模型上下文工程实践》- 序章
 date: 2025-11-20 10:00:00
+series: 大模型上下文工程实践
+series_order: 0
 tags:
   - Agent
   - LLM

@@ -28,4 +28,48 @@
   <div class="terminal-content">
     <%- page.content %>
   </div>
+  <%
+    var previousSeriesPost = null;
+    var nextSeriesPost = null;
+
+    if (page.series && site.posts && site.posts.toArray) {
+      var seriesPosts = site.posts.toArray()
+        .filter(function(post) {
+          return post.series === page.series && post.series_order !== undefined;
+        })
+        .sort(function(firstPost, secondPost) {
+          return Number(firstPost.series_order) - Number(secondPost.series_order);
+        });
+      var currentSeriesIndex = seriesPosts.findIndex(function(post) {
+        return post.path === page.path;
+      });
+
+      if (currentSeriesIndex > 0) {
+        previousSeriesPost = seriesPosts[currentSeriesIndex - 1];
+      }
+      if (currentSeriesIndex >= 0 && currentSeriesIndex < seriesPosts.length - 1) {
+        nextSeriesPost = seriesPosts[currentSeriesIndex + 1];
+      }
+    }
+  %>
+  <% if (previousSeriesPost || nextSeriesPost) { %>
+    <nav class="series-navigation" aria-label="<%- page.series %>系列文章导航">
+      <div class="series-navigation-slot">
+        <% if (previousSeriesPost) { %>
+          <a class="series-navigation-link series-navigation-previous" href="<%- url_for(previousSeriesPost.path) %>">
+            <span class="series-navigation-label">&lt; 上一章</span>
+            <strong><%- previousSeriesPost.title %></strong>
+          </a>
+        <% } %>
+      </div>
+      <div class="series-navigation-slot series-navigation-next-slot">
+        <% if (nextSeriesPost) { %>
+          <a class="series-navigation-link series-navigation-next" href="<%- url_for(nextSeriesPost.path) %>">
+            <span class="series-navigation-label">下一章 &gt;</span>
+            <strong><%- nextSeriesPost.title %></strong>
+          </a>
+        <% } %>
+      </div>
+    </nav>
+  <% } %>
 </article>

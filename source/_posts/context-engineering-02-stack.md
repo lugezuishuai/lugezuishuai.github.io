@@ -1,6 +1,8 @@
 ---
-title: 第 2 章：上下文工程技术栈
+title: 《大模型上下文工程实践》- 上下文工程技术栈
 date: 2025-10-30 10:00:00
+series: 大模型上下文工程实践
+series_order: 2
 tags:
   - Agent
 categories:

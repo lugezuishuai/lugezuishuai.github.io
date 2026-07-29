@@ -1,6 +1,8 @@
 ---
-title: 第 1 章：从提示词到上下文
+title: 《大模型上下文工程实践》- 从提示词到上下文
 date: 2025-11-10 10:00:00
+series: 大模型上下文工程实践
+series_order: 1
 tags:
   - Agent
 categories:
