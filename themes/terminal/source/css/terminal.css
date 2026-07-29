@@ -134,10 +134,12 @@ img {
 
 .terminal-shell {
   display: flex;
+  position: fixed;
+  inset: 1rem;
   flex-direction: column;
   height: calc(100vh - 2rem);
   min-height: 0;
-  margin: 1rem;
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--terminal-line);
   border-radius: 8px;
@@ -949,12 +951,12 @@ img {
   transform: translateX(0.15rem);
 }
 
-.post-toc .toc-link.is-active-link {
+.post-toc .toc-link.is-current-link {
   color: var(--terminal-green);
   font-weight: 700;
 }
 
-.post-toc .toc-link.is-active-link::before {
+.post-toc .toc-link.is-current-link::before {
   margin-right: 0.35rem;
   content: ">";
 }
@@ -1002,6 +1004,8 @@ img {
   }
 
   .terminal-shell {
+    position: static;
+    inset: auto;
     min-height: 100svh;
     height: auto;
     margin: 0;

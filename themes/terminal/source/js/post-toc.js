@@ -40,7 +40,7 @@
         target === activeHeading.id ||
         decodeURIComponent(target) === activeHeading.id;
 
-      link.classList.toggle("is-active-link", matches);
+      link.classList.toggle("is-current-link", matches);
     });
   }
 
@@ -48,6 +48,42 @@
     if (frameRequested) return;
     frameRequested = true;
     window.requestAnimationFrame(syncActiveLink);
+  }
+
+  function getHeading(link) {
+    var target = link.getAttribute("href").slice(1);
+
+    return (
+      document.getElementById(target) ||
+      document.getElementById(decodeURIComponent(target))
+    );
+  }
+
+  function scrollToHeading(link) {
+    var heading = getHeading(link);
+    if (!heading) return;
+
+    var destination =
+      window.location.pathname +
+      window.location.search +
+      link.getAttribute("href");
+    window.history.pushState(null, "", destination);
+
+    if (mobileQuery.matches || !main) {
+      window.scrollTo({
+        top: window.scrollY + heading.getBoundingClientRect().top - 20,
+        behavior: "smooth",
+      });
+    } else {
+      main.scrollTo({
+        top:
+          main.scrollTop +
+          heading.getBoundingClientRect().top -
+          main.getBoundingClientRect().top -
+          20,
+        behavior: "smooth",
+      });
+    }
   }
 
   function renderToc() {
@@ -59,9 +95,7 @@
       headingSelector: "h2, h3, h4",
       collapseDepth: 6,
       headingsOffset: 24,
-      scrollSmooth: true,
-      scrollSmoothDuration: 320,
-      scrollSmoothOffset: -20,
+      scrollSmooth: false,
     };
 
     if (!mobileQuery.matches) options.scrollContainer = desktopScroller;
@@ -76,7 +110,12 @@
   if (main) {
     main.addEventListener("scroll", scheduleActiveLinkSync, { passive: true });
   }
-  panel.addEventListener("click", function () {
+  panel.addEventListener("click", function (event) {
+    var link = event.target.closest(".toc-link");
+    if (!link) return;
+
+    event.preventDefault();
+    scrollToHeading(link);
     window.setTimeout(scheduleActiveLinkSync, 360);
   });
 })();
