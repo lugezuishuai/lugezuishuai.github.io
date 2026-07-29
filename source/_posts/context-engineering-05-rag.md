@@ -8,8 +8,6 @@ categories:
 featured_image: ./5.1.png
 ---
 
-<!-- toc -->
-
 > 深入理解RAG技术的原理和实现方法
 
 # 5.1 RAG 基础与原理

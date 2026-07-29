@@ -3,7 +3,7 @@
   <head>
     <%- partial('partials/head') %>
   </head>
-  <body>
+  <body class="<%= is_post() ? 'is-post' : '' %>">
     <div class="terminal-shell">
       <header class="terminal-titlebar" aria-label="Terminal window">
         <div class="terminal-controls" aria-hidden="true">

@@ -8,8 +8,6 @@ categories:
 featured_image: ./4.1.png
 ---
 
-<!-- toc -->
-
 > 构建智能的记忆管理和持久化机制
 
 # 4.1 基础理论

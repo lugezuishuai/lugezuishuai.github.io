@@ -8,6 +8,8 @@ stylesheets:
   - /css/terminal.css
 
 scripts:
+  - /js/tocbot.min.js
+  - /js/post-toc.js
   - /js/search.js
   - /js/system-info.js
   - /js/theme-switcher.js

@@ -79,11 +79,6 @@ default_category: uncategorized
 category_map:
 tag_map:
 
-# Table of contents
-toc:
-  maxdepth: 3
-  class: article-toc
-
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true

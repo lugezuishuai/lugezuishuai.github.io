@@ -8,8 +8,6 @@ categories:
 featured_image: ./6.1.png
 ---
 
-<!-- toc -->
-
 > 了解工具集成、函数调用和MCP
 
 早期有些人寄希望于大模型能力提升能实现 AGI，但是现在慢慢地发现，工具调用才是现阶段模型最需要的，工具调用也是大模型与外界交互的一个窗口。现在流行的 **Function Calling**、**Computer-Use**、**MCP（Model Context Protocol）** 都是在这个方向延伸出来的。

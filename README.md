@@ -84,8 +84,6 @@ categories:
   - [React]
 featured_image: ./cover.jpg
 ---
-
-<!-- toc -->
 ```
 
 字段说明：
@@ -95,7 +93,8 @@ featured_image: ./cover.jpg
 - `tags`：文章标签，可配置多个。
 - `categories`：文章分类。
 - `featured_image`：首页缩略图和文章封面，必须使用本地图片。
-- `<!-- toc -->`：目录插入位置，由 `hexo-kira-toc` 自动生成三级目录和标题锚点。
+
+文章页会由 `tocbot` 根据二至四级标题自动生成目录，无需在 Markdown 中添加目录占位符。桌面端目录显示在右侧栏并随滚动高亮当前章节，移动端显示在正文上方。
 
 ## 图片规范
 
@@ -159,7 +158,7 @@ permissions:
 ## 发布检查清单
 
 - [ ] Front Matter 标题、日期、标签和分类正确。
-- [ ] 文章包含 `<!-- toc -->`。
+- [ ] 标题层级连续，文章目录结构正确。
 - [ ] 所有图片均为本地相对路径。
 - [ ] `npm run check:images` 通过。
 - [ ] `npm run build` 通过。
