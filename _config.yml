@@ -16,8 +16,8 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lugezuishuai.github.io/jackson-blog
-root: /jackson-blog/
+url: https://lugezuishuai.github.io
+root: /
 permalink: :category/:title/
 permalink_defaults:
 pretty_urls:
@@ -79,6 +79,11 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+# Table of contents
+toc:
+  maxdepth: 3
+  class: article-toc
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true
@@ -112,5 +117,5 @@ theme: terminal
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/lugezuishuai/jackson-blog.git
+  repository: https://github.com/lugezuishuai/lugezuishuai.github.io.git
   branch: gh-pages

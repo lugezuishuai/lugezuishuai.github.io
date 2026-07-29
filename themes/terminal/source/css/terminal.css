@@ -776,6 +776,55 @@ img {
   font-size: 1rem;
 }
 
+.terminal-content .article-toc {
+  margin: 0 0 2rem;
+  border: 1px solid var(--terminal-line);
+  border-left: 3px solid var(--terminal-green);
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
+  background: var(--terminal-soft-bg);
+}
+
+.terminal-content .article-toc::before {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--terminal-green);
+  content: "$ tree headings/";
+  font-weight: 700;
+}
+
+.terminal-content .article-toc ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.terminal-content .article-toc ul ul {
+  margin-top: 0.3rem;
+  border-left: 1px dashed var(--terminal-line-bright);
+  padding-left: 1rem;
+}
+
+.terminal-content .article-toc li {
+  position: relative;
+  margin: 0.25rem 0;
+}
+
+.terminal-content .article-toc li::before {
+  position: absolute;
+  left: -1rem;
+  color: var(--terminal-dim);
+  content: "├─";
+}
+
+.terminal-content .article-toc a {
+  color: var(--terminal-muted);
+}
+
+.terminal-content .article-toc a:hover {
+  color: var(--terminal-green);
+}
+
 .terminal-content h2,
 .terminal-content h3,
 .terminal-content h4 {

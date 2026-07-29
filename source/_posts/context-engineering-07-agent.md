@@ -8,6 +8,8 @@ categories:
 featured_image: ./7.1.jpg
 ---
 
+<!-- toc -->
+
 > 构建AI智能体
 
 # 7.1 智能体（Agent）简述

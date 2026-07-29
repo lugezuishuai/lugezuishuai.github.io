@@ -8,6 +8,8 @@ categories:
 featured_image: ./whiteboard-05.jpg
 ---
 
+<!-- toc -->
+
 # 什么是服务端渲染
 
 服务端渲染， SSR (Server-side Rendering) ，顾名思义，就是在浏览器发起页面请求后由服务端完成页面的HTML结构拼接，返回给浏览器解析后能直接构建出**有内容**的页面。
