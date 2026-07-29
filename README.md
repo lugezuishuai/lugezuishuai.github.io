@@ -2,8 +2,8 @@
 
 Jackson 的个人技术博客，基于 [Hexo](https://hexo.io/) 与自定义 Terminal 主题构建，通过 GitHub Actions 发布到 GitHub Pages。
 
-- 线上地址：<https://lugezuishuai.github.io/>
-- 内容方向：React、大语言模型、上下文工程与 Agent
+- 线上地址：<https://blog.humorsoul.com/>
+- 内容方向：Agent、大模型、前端、全栈、生活
 - Node.js：22
 - Hexo：8
 
@@ -118,10 +118,10 @@ series_order: 1
 lugezuishuai/lugezuishuai.github.io
 ```
 
-该命名让站点直接发布在 `https://lugezuishuai.github.io/`，不需要仓库名路径前缀。Hexo 对应配置为：
+该命名让站点发布在 GitHub Pages 根路径；当前通过自定义域名 `https://blog.humorsoul.com/` 对外提供访问，不需要仓库名路径前缀。Hexo 对应配置为：
 
 ```yaml
-url: https://lugezuishuai.github.io
+url: https://blog.humorsoul.com
 root: /
 ```
 

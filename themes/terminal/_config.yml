@@ -34,7 +34,7 @@ welcome:
   command: cat welcome.txt
   title: Welcome to Jackson's terminal-based blog.
   lines:
-    - 这里记录 React、大语言模型与上下文工程实践。
+    - 这里记录 Agent、大模型、前端、全栈、生活的内容。
     - 从原理出发，持续沉淀可复用的工程经验。
   accent: Stay curious. Keep building.
 
@@ -47,13 +47,13 @@ about:
   links:
     GitHub: https://github.com/lugezuishuai
 
-now:
-  - label: 正在学习
-    value: AI 与软件工程
-  - label: 正在构建
-    value: Jackson Blog
-  - label: 最近在读
-    value: 大模型上下文工程实践
+# now:
+#   - label: 正在学习
+#     value: AI 与软件工程
+#   - label: 正在构建
+#     value: Jackson Blog
+#   - label: 最近在读
+#     value: 大模型上下文工程实践
 
 recent_tags_limit: 8
 date_format: YYYY-MM-DD
