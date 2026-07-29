@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./2.1.png
+featured_image: ./cover.jpg
 ---
 
 > 全面了解上下文工程的技术组成和架构

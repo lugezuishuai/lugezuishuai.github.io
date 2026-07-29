@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./3.1.png
+featured_image: ./cover.jpg
 ---
 
 > 了解主流提示词技术，利用提示词完成各类任务

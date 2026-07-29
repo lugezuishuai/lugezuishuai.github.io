@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./7.1.jpg
+featured_image: ./cover.jpg
 ---
 
 > 构建AI智能体

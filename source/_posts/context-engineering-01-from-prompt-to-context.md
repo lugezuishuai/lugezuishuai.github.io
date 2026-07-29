@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./1.1.png
+featured_image: ./cover.jpg
 ---
 
 > 了解提示词工程到上下文工程的演进，掌握大语言模型交互的核心技术

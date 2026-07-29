@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./6.1.png
+featured_image: ./cover.jpg
 ---
 
 > 了解工具集成、函数调用和MCP

@@ -125,7 +125,7 @@ url: https://lugezuishuai.github.io
 root: /
 ```
 
-推送到 `master` 后，`.github/workflows/hexo.yml` 会自动执行：
+直接推送到 `master`，或将 Pull Request（MR）合并到 `master` 后，`.github/workflows/hexo.yml` 会自动执行：
 
 1. 检出代码。
 2. 使用 GitHub 自动生成的 `secrets.GITHUB_TOKEN` 验证仓库 API 访问。
@@ -134,7 +134,7 @@ root: /
 5. 上传 Pages artifact。
 6. 部署到 GitHub Pages。
 
-也可以在 GitHub Actions 页面手动运行 `Pages` 工作流。
+也可以通过 GitHub Actions 页面的 `workflow_dispatch` 手动运行 `Pages` 工作流。关闭但未合并的 Pull Request 不会执行构建和部署。
 
 ## GITHUB_TOKEN
 

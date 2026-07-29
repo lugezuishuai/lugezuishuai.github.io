@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./4.1.png
+featured_image: ./cover.jpg
 ---
 
 > 构建智能的记忆管理和持久化机制

@@ -5,7 +5,7 @@ tags:
   - React
 categories:
   - [React]
-featured_image: ./whiteboard-05.jpg
+featured_image: ./image-01.jpg
 ---
 
 # 什么是服务端渲染

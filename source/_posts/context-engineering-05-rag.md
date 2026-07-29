@@ -7,7 +7,7 @@ tags:
   - Agent
 categories:
   - [大模型上下文工程实践]
-featured_image: ./5.1.png
+featured_image: ./cover.jpg
 ---
 
 > 深入理解RAG技术的原理和实现方法
