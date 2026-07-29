@@ -5,7 +5,7 @@ tags:
   - React
 categories:
   - [React]
-featured_image: ./image-01.jpg
+featured_image: ./cover.jpg
 ---
 
 # 什么是服务端渲染
