@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0b0f14"/>
+  <g fill="none" stroke="#49f772" stroke-width="3">
+    <circle cx="600" cy="130" r="56"/><circle cx="250" cy="330" r="44"/><circle cx="480" cy="330" r="44"/>
+    <circle cx="720" cy="330" r="44"/><circle cx="950" cy="330" r="44"/><circle cx="360" cy="560" r="44"/>
+    <circle cx="600" cy="560" r="44"/><circle cx="840" cy="560" r="44"/>
+    <path d="M570 178 278 300M585 184 493 288M615 184 707 288M630 178 922 300M278 365 345 525M493 372 575 525M707 372 625 525M922 365 855 525"/>
+  </g>
+  <g fill="#e8eef7" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="600" y="136" font-size="24">Supervisor</text>
+    <text x="250" y="337" font-size="19">Network</text><text x="480" y="337" font-size="19">Debate</text>
+    <text x="720" y="337" font-size="19">Sequential</text><text x="950" y="337" font-size="19">Parallel</text>
+    <text x="360" y="567" font-size="19">Hierarchical</text><text x="600" y="567" font-size="19">Reflection</text>
+    <text x="840" y="567" font-size="19">Collaboration</text>
+    <text x="600" y="670" fill="#8aa0b8" font-size="24">Multi-Agent Organization Patterns</text>
+  </g>
+</svg>
