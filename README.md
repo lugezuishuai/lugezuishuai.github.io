@@ -109,6 +109,7 @@ series_order: 1
 - 优先使用 WebP、压缩后的 JPEG 或优化后的 PNG。
 - 图片文件名使用小写英文、数字和连字符。
 - 提交时会由 Husky 和 GitHub Actions 执行 `npm run check:images`。
+- 文章封面和正文图片支持点击放大预览；如需关闭单张图片预览，可为图片添加 `data-no-zoom` 属性。
 
 ## GitHub Pages 发布
 

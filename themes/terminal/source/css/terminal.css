@@ -771,6 +771,7 @@ img {
   width: 100%;
   max-height: 32rem;
   object-fit: cover;
+  cursor: zoom-in;
 }
 
 .terminal-content {
@@ -886,6 +887,16 @@ img {
   margin: 1.4rem auto;
   border: 1px solid var(--terminal-line);
   border-radius: 6px;
+  cursor: zoom-in;
+}
+
+.medium-zoom-overlay {
+  z-index: 1000;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1001;
+  cursor: zoom-out;
 }
 
 .terminal-content table {

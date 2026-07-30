@@ -10,6 +10,8 @@ stylesheets:
 scripts:
   - /js/tocbot.min.js
   - /js/post-toc.js
+  - /js/medium-zoom.min.js
+  - /js/image-preview.js
   - /js/search.js
   - /js/system-info.js
   - /js/theme-switcher.js
