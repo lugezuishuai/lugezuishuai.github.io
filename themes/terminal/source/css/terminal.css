@@ -881,6 +881,125 @@ img {
   min-height: 1.7em;
 }
 
+/* Hexo's server-side highlighter emits semantic token classes without colors. */
+.terminal-content figure.highlight :is(.comment, .quote, .hljs-comment, .hljs-quote) {
+  color: var(--terminal-muted);
+  font-style: italic;
+}
+
+.terminal-content figure.highlight :is(
+  .keyword,
+  .selector-tag,
+  .doctag,
+  .name,
+  .section,
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-doctag,
+  .hljs-name,
+  .hljs-section
+) {
+  color: var(--terminal-green);
+  font-weight: 700;
+}
+
+.terminal-content figure.highlight :is(
+  .string,
+  .regexp,
+  .meta-string,
+  .template-tag,
+  .template-variable,
+  .hljs-string,
+  .hljs-regexp,
+  .hljs-meta-string,
+  .hljs-template-tag,
+  .hljs-template-variable
+) {
+  color: var(--terminal-amber);
+}
+
+.terminal-content figure.highlight :is(
+  .number,
+  .literal,
+  .symbol,
+  .bullet,
+  .hljs-number,
+  .hljs-literal,
+  .hljs-symbol,
+  .hljs-bullet
+) {
+  color: var(--terminal-cyan);
+}
+
+.terminal-content figure.highlight :is(
+  .attr,
+  .attribute,
+  .variable,
+  .params,
+  .property,
+  .selector-attr,
+  .selector-class,
+  .selector-id,
+  .selector-pseudo,
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-variable,
+  .hljs-params,
+  .hljs-property,
+  .hljs-selector-attr,
+  .hljs-selector-class,
+  .hljs-selector-id,
+  .hljs-selector-pseudo
+) {
+  color: var(--terminal-cyan);
+}
+
+.terminal-content figure.highlight :is(
+  .title,
+  .type,
+  .built_in,
+  .class .title,
+  .function .title,
+  .hljs-title,
+  .hljs-type,
+  .hljs-built_in,
+  .hljs-class .hljs-title,
+  .hljs-function .hljs-title
+) {
+  color: var(--terminal-amber);
+}
+
+.terminal-content figure.highlight :is(
+  .meta,
+  .operator,
+  .punctuation,
+  .subst,
+  .link,
+  .hljs-meta,
+  .hljs-operator,
+  .hljs-punctuation,
+  .hljs-subst,
+  .hljs-link
+) {
+  color: var(--terminal-dim);
+}
+
+.terminal-content figure.highlight :is(.addition, .hljs-addition) {
+  color: var(--terminal-green);
+}
+
+.terminal-content figure.highlight :is(.deletion, .hljs-deletion) {
+  color: var(--terminal-red);
+}
+
+.terminal-content figure.highlight :is(.emphasis, .hljs-emphasis) {
+  font-style: italic;
+}
+
+.terminal-content figure.highlight :is(.strong, .hljs-strong) {
+  font-weight: 700;
+}
+
 .terminal-content img {
   width: auto;
   max-height: 70vh;
