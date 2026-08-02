@@ -123,6 +123,10 @@
     };
   }
 
+  function normalizeMermaidSvg(svg) {
+    return svg.replace(/<br\s*\/?>/gi, "<br/>");
+  }
+
   async function renderMermaid(palette, renderId) {
     if (mermaidDiagrams.length === 0) return;
     if (!window.mermaid) {
@@ -146,7 +150,8 @@
           diagram.source,
         );
         if (renderId !== requestedRender) return;
-        diagram.image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(result.svg)}`;
+        const svg = normalizeMermaidSvg(result.svg);
+        diagram.image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
         diagram.image.dataset.diagramTheme =
           document.documentElement.dataset.terminalTheme || "green";
       } catch (error) {

@@ -9,7 +9,7 @@ stylesheets:
 
 scripts:
   - /js/mermaid.min.js
-  - /js/diagram-renderer.js?v=2
+  - /js/diagram-renderer.js?v=3
   - /js/tocbot.min.js
   - /js/post-toc.js?v=3
   - /js/medium-zoom.min.js
