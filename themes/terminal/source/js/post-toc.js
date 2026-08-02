@@ -1,7 +1,7 @@
 (function () {
   var tocSelector = ".js-toc";
   var contentSelector = ".terminal-content";
-  var headingSelector = "h1, h2, h3, h4";
+  var headingSelector = "h1, h2, h3, h4, h5";
   var desktopScroller = ".terminal-main";
   var mobileQuery = window.matchMedia("(max-width: 820px)");
   var panel = document.querySelector("[data-post-toc-panel]");
