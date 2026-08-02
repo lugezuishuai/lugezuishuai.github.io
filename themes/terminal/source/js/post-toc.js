@@ -1,6 +1,7 @@
 (function () {
   var tocSelector = ".js-toc";
   var contentSelector = ".terminal-content";
+  var headingSelector = "h1, h2, h3, h4";
   var desktopScroller = ".terminal-main";
   var mobileQuery = window.matchMedia("(max-width: 820px)");
   var panel = document.querySelector("[data-post-toc-panel]");
@@ -10,7 +11,7 @@
 
   if (!panel || !content || !window.tocbot) return;
 
-  var headings = Array.from(content.querySelectorAll("h2, h3, h4"));
+  var headings = Array.from(content.querySelectorAll(headingSelector));
 
   if (!headings.length) {
     panel.hidden = true;
@@ -92,7 +93,7 @@
     var options = {
       tocSelector: tocSelector,
       contentSelector: contentSelector,
-      headingSelector: "h2, h3, h4",
+      headingSelector: headingSelector,
       collapseDepth: 6,
       headingsOffset: 24,
       scrollSmooth: false,
