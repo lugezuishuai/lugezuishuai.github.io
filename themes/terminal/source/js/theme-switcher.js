@@ -10,6 +10,7 @@
   const key = "terminal-theme";
   const currentNodes = Array.from(document.querySelectorAll("[data-terminal-theme-current]"));
   const choices = Array.from(document.querySelectorAll("[data-terminal-theme-choice]"));
+  const highlightThemes = Array.from(document.querySelectorAll("[data-highlight-theme]"));
 
   function setTheme(theme) {
     const nextTheme = themes.includes(theme) ? theme : "green";
@@ -19,6 +20,10 @@
     });
     choices.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.terminalThemeChoice === nextTheme));
+    });
+    const highlightTheme = nextTheme === "white" ? "light" : "dark";
+    highlightThemes.forEach((stylesheet) => {
+      stylesheet.disabled = stylesheet.dataset.highlightTheme !== highlightTheme;
     });
     try {
       localStorage.setItem(key, nextTheme);

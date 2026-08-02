@@ -79,3 +79,13 @@ if (is_archive()) {
     <link rel="stylesheet" href="<%- url_for(stylesheet) %>">
   <% }); %>
 <% } %>
+<link rel="stylesheet" href="<%- url_for('/css/highlight-github-dark.css') %>" data-highlight-theme="dark">
+<link rel="stylesheet" href="<%- url_for('/css/highlight-github.css') %>" data-highlight-theme="light" disabled>
+<script>
+  (function () {
+    var activeTheme = document.documentElement.dataset.terminalTheme === "white" ? "light" : "dark";
+    document.querySelectorAll("[data-highlight-theme]").forEach(function (stylesheet) {
+      stylesheet.disabled = stylesheet.dataset.highlightTheme !== activeTheme;
+    });
+  })();
+</script>

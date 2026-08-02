@@ -5,7 +5,7 @@
   function diagramBlocks(language) {
     return Array.from(
       content.querySelectorAll(
-        `figure.highlight.${language}, pre > code.language-${language}, pre > code.highlight.${language}`,
+        `figure.highlight.${language}, pre > code.language-${language}, pre > code.highlight.${language}, pre > code.hljs.${language}`,
       ),
     );
   }

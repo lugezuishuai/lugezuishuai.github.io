@@ -61,7 +61,7 @@ highlight:
     - plantuml
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
