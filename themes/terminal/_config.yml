@@ -11,7 +11,7 @@ scripts:
   - /js/mermaid.min.js
   - /js/diagram-renderer.js
   - /js/tocbot.min.js
-  - /js/post-toc.js
+  - /js/post-toc.js?v=2
   - /js/medium-zoom.min.js
   - /js/image-preview.js
   - /js/search.js
