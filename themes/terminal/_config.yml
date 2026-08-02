@@ -8,6 +8,8 @@ stylesheets:
   - /css/terminal.css
 
 scripts:
+  - /js/mermaid.min.js
+  - /js/diagram-renderer.js
   - /js/tocbot.min.js
   - /js/post-toc.js
   - /js/medium-zoom.min.js

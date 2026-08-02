@@ -890,6 +890,48 @@ img {
   cursor: zoom-in;
 }
 
+.diagram-preview {
+  display: flex;
+  width: 100%;
+  min-height: 8rem;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  border: 1px solid var(--terminal-line);
+  border-radius: 6px;
+  margin: 1.4rem 0;
+  padding: 1rem;
+  background: var(--terminal-code-bg);
+}
+
+.diagram-preview svg {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.diagram-preview img {
+  max-width: 100%;
+  max-height: none;
+  margin: auto;
+  border: 0;
+}
+
+.diagram-error {
+  display: block;
+  color: var(--terminal-amber);
+}
+
+.diagram-error figcaption {
+  margin-bottom: 0.75rem;
+}
+
+.diagram-error pre {
+  margin: 0;
+}
+
 .medium-zoom-overlay {
   z-index: 1000;
 }
