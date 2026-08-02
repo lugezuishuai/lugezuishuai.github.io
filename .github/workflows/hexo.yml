@@ -49,6 +49,9 @@ jobs:
       - name: Check images
         run: npm run check:images
 
+      - name: Check syntax highlighting
+        run: npm run check:highlight
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

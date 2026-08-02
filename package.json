@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
+    "check:highlight": "node tools/check-highlight-languages.mjs",
     "check:images": "node tools/check-image-size.mjs",
     "clean": "hexo clean",
     "deploy": "hexo deploy",

@@ -253,7 +253,7 @@ HNSW 的层间连接机制和跳表完全一致 —— 每个节点按概率随�
 
     - ef 越大，召回精度越高，但查询速度变慢；调参就是平衡「速度 / 准确率」。
 
-```SQL
+```sql
 -- 1. 向量检索索引 (用于 ByteRAG 语义搜索)
   INDEX idx_show_name_embedding_vector(`show_name_embedding`) USING VECTOR PROPERTIES(
     "dim" = "2048", -- 向量维度
