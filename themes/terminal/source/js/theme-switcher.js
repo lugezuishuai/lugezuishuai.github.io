@@ -8,6 +8,7 @@
     white: "terminal-white",
   };
   const key = "terminal-theme";
+  const themeChangeEvent = "terminal-theme-change";
   const currentNodes = Array.from(document.querySelectorAll("[data-terminal-theme-current]"));
   const choices = Array.from(document.querySelectorAll("[data-terminal-theme-choice]"));
   const highlightThemes = Array.from(document.querySelectorAll("[data-highlight-theme]"));
@@ -29,6 +30,11 @@
       localStorage.setItem(key, nextTheme);
     } catch {
     }
+    document.dispatchEvent(
+      new CustomEvent(themeChangeEvent, {
+        detail: { theme: nextTheme },
+      }),
+    );
   }
 
   function savedTheme() {

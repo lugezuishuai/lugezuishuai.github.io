@@ -9,14 +9,14 @@ stylesheets:
 
 scripts:
   - /js/mermaid.min.js
-  - /js/diagram-renderer.js
+  - /js/diagram-renderer.js?v=2
   - /js/tocbot.min.js
   - /js/post-toc.js?v=3
   - /js/medium-zoom.min.js
-  - /js/image-preview.js
+  - /js/image-preview.js?v=2
   - /js/search.js
   - /js/system-info.js
-  - /js/theme-switcher.js
+  - /js/theme-switcher.js?v=2
   - /js/keyboard-shortcuts.js
 
 menu:
