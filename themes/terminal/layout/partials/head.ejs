@@ -28,8 +28,8 @@ if (is_archive()) {
 <% } %>
 <script>
   (function () {
-    var themes = ["green", "amber", "cyan", "magenta", "white"];
-    var theme = "green";
+    var themes = ["white", "green", "amber", "cyan", "magenta"];
+    var theme = "white";
     try {
       var savedTheme = localStorage.getItem("terminal-theme");
       if (themes.indexOf(savedTheme) !== -1) theme = savedTheme;

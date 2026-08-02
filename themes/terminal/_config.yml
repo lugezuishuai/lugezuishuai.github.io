@@ -16,7 +16,7 @@ scripts:
   - /js/image-preview.js?v=4
   - /js/search.js
   - /js/system-info.js
-  - /js/theme-switcher.js?v=2
+  - /js/theme-switcher.js?v=3
   - /js/keyboard-shortcuts.js
 
 menu:

@@ -7,6 +7,7 @@
     magenta: "terminal-magenta",
     white: "terminal-white",
   };
+  const defaultTheme = "white";
   const key = "terminal-theme";
   const themeChangeEvent = "terminal-theme-change";
   const currentNodes = Array.from(document.querySelectorAll("[data-terminal-theme-current]"));
@@ -14,7 +15,7 @@
   const highlightThemes = Array.from(document.querySelectorAll("[data-highlight-theme]"));
 
   function setTheme(theme) {
-    const nextTheme = themes.includes(theme) ? theme : "green";
+    const nextTheme = themes.includes(theme) ? theme : defaultTheme;
     document.documentElement.dataset.terminalTheme = nextTheme;
     currentNodes.forEach((node) => {
       node.textContent = names[nextTheme];
@@ -53,11 +54,11 @@
 
   currentNodes.forEach((node) => {
     node.addEventListener("click", () => {
-      const activeTheme = document.documentElement.dataset.terminalTheme || "green";
+      const activeTheme = document.documentElement.dataset.terminalTheme || defaultTheme;
       const index = themes.indexOf(activeTheme);
       setTheme(themes[(index + 1) % themes.length]);
     });
   });
 
-  setTheme(savedTheme() || "green");
+  setTheme(savedTheme() || defaultTheme);
 })();
