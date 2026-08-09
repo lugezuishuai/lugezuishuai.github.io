@@ -1,6 +1,6 @@
 ---
 title: A2A 详解
-date: 2025-08-05 22:40:05
+date: 2026-05-04 22:40:05
 tags:
   - A2A
   - AI Agent
