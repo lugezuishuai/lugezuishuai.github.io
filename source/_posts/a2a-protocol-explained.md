@@ -13,10 +13,6 @@ featured_image: ./cover.jpg
 > **一句话概括：**A2A（Agent2Agent）是 Google Cloud 于 2025 年推出的开放协议，用于解决**多个 AI Agent 之间如何互相发现、通信与协作**的问题。它与 MCP「一横一纵」互补——MCP 让 Agent 向下连工具，A2A 让 Agent 向外连 Agent。
 
 
-**阅读导航：**本文以图表为主、文字为辅，依次讲解 A2A 的概念、与 MCP 的区别、协议原理与流程、Client 与 Server 两端实现，最后以一个真实开源项目为例做代码级实践剖析。
-
----
-
 # 一、什么是 A2A 协议
 
 A2A（Agent2Agent）协议是由 **Google Cloud** 推出的开放协议，旨在促进不同 AI Agent 之间的互操作性。其核心目标是：让由**不同供应商构建、使用不同技术框架**的 Agent，能够在动态的多 Agent 生态中有效通信与协作。
@@ -690,7 +686,7 @@ for await (const response of client.sendMessageStream(request)) {
 
 以用户输入"用三句话解释 A2A 协议"为例（同步模式），Client Agent 将其判定为实质性请求并调用委派工具。Client 发现 Server 的 Agent Card，选择 JSON-RPC 接口，随后以 `sendMessageStream` 流式发送消息；Server 在同一连接上创建并维护 Task，将请求交给 LangGraph Server Agent，最终把状态、文本消息或 Artifact 更新以 SSE 逐条回传。异步推送模式的差异见下一节。
 
-![图片展示了A2A流式任务生命周期，包含Client、SDK transport、RequestHandler、Executor/EventBus等环节。Client发送消息，经SDK transport、RequestHandler后，Executor/EventBus执行任务，任务状态更新，产物更新。其中，message为Agent直接消息，task为任务快照，statusUpdate为状态增量，artifactUpdate为产物增量。该图与上下文紧密相关，直观呈现了A2A交互流程中各环节及消息类型，帮助理解任务执行过程。](https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDNjM2MxMWJjYWMxYTM4MjZhZTY3M2U1NTQyNjQyNjBfMmI3NGFkMzRmYjU4MmFhMGM4NDQ5NTZmYzVhMmIyZGVfSUQ6NzY3MTExNzI3MDQ2Njc0MzI1MF8xNzg2MjUxNDkzOjE3ODYyNTUwOTNfVjM)
+![A2A 流式任务生命周期：Client、SDK transport、RequestHandler 与 Executor/EventBus 之间的消息、任务、状态与产物更新。](./a2a-interaction-flow.png)
 
 ```mermaid
 sequenceDiagram
