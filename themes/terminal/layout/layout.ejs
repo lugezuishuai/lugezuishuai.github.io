@@ -27,6 +27,17 @@
         <main class="terminal-main">
           <%- body %>
         </main>
+        <button
+          class="back-to-top"
+          type="button"
+          aria-label="回到顶部"
+          aria-hidden="true"
+          tabindex="-1"
+          data-back-to-top
+        >
+          <span class="back-to-top-icon" aria-hidden="true">↑</span>
+          <span class="back-to-top-label" aria-hidden="true">TOP</span>
+        </button>
         <aside class="terminal-sidebar terminal-sidebar-right">
           <%- partial('partials/right-sidebar') %>
         </aside>

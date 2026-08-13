@@ -70,10 +70,14 @@
     return document.scrollingElement || document.documentElement;
   }
 
+  function scrollBehavior() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  }
+
   function scrollPage(direction) {
     scrollTarget().scrollBy({
       top: Math.round(window.innerHeight * 0.85) * direction,
-      behavior: "smooth",
+      behavior: scrollBehavior(),
     });
     return true;
   }
@@ -82,10 +86,32 @@
     const target = scrollTarget();
     target.scrollTo({
       top: edge === "bottom" ? target.scrollHeight : 0,
-      behavior: "smooth",
+      behavior: scrollBehavior(),
     });
     return true;
   }
+
+  function setupBackToTop() {
+    const button = document.querySelector("[data-back-to-top]");
+    if (!button) return;
+
+    const updateVisibility = () => {
+      const isVisible = scrollTarget().scrollTop > 80;
+      button.classList.toggle("is-visible", isVisible);
+      button.setAttribute("aria-hidden", String(!isVisible));
+      button.tabIndex = isVisible ? 0 : -1;
+    };
+
+    button.addEventListener("click", () => scrollToEdge("top"));
+
+    const main = document.querySelector(".terminal-main");
+    if (main) main.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    window.addEventListener("resize", updateVisibility);
+    updateVisibility();
+  }
+
+  setupBackToTop();
 
   function findDirectionalLink(direction) {
     const relLink = document.querySelector('a[rel="' + direction + '"], link[rel="' + direction + '"]');
