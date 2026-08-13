@@ -1,0 +1,23 @@
+{
+  "skill_name": "lark-to-hexo-blog",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把这个飞书 Wiki 文档发布到 jackson_blog：<FEISHU_WIKI_URL>，发布时间 2026-09-18。文档里有普通图片和两个 Mermaid 画板。封面按 Skill 默认风格直接生成，推送 master，等 GitHub Actions 成功后用 Chrome 验证并把线上链接给我。",
+      "expected_output": "A source-faithful Hexo post with exact date, local images, Mermaid fenced source, the built-in cover style, clean build artifacts, an exact-SHA successful Pages run, the live article URL, and either real Chrome verification through an available capability or an explicit manual-verification handoff when unavailable.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "请把下面两篇飞书文档同步成博客文章并发布：<FEISHU_DOC_URL_A>（2026-10-03）和 <FEISHU_DOC_URL_B>（2026-10-11）。第一篇含 PlantUML 画板，第二篇有很多图片。封面统一用深色 screen-print、无文字、16:9。假设当前 Agent 没有 chrome:control-chrome，也没有任何内置 Chrome 控制工具；发布后返回两个线上 URL，并清楚告诉我需要手动验证什么。",
+      "expected_output": "Two posts preserving their distinct dates and assets, PlantUML as a fenced block, user-selected covers, successful exact-commit deployment, two live URLs, no attempted browser substitution or plugin installation, and a concise manual checklist with visual verification explicitly marked pending.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "先把 <FEISHU_DOC_URL> 转成 Hexo Markdown 放进仓库，图片也下载好，画板能提取 Mermaid 就保留代码。暂时不要生成封面、不要提交、不要推送，也不要做线上验证。",
+      "expected_output": "A local source-faithful Markdown draft and local assets only, with Mermaid source when available, no cover generation, no commit or push, no online claim, and no leftover process files.",
+      "files": []
+    }
+  ]
+}
