@@ -5,7 +5,7 @@ terminal_title: "jackson-blog"
 favicon: /favicon.png
 
 stylesheets:
-  - /css/terminal.css?v=4
+  - /css/terminal.css?v=5
 
 scripts:
   - /js/mermaid.min.js
