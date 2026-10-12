@@ -21,6 +21,8 @@ featured_image: ./cover.jpg
 
 ## 🚀 快速开始
 
+> **代码仓库：[https://github.com/lugezuishuai/dsh-token-chart](https://github.com/lugezuishuai/dsh-token-chart)**
+
 ```bash
 dsh plugin --profile web add dsh-token-chart
 ```
