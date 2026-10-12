@@ -13,9 +13,11 @@ featured_image: ./cover.jpg
 
 一个 **DeepSeek Harness** 插件：把本机会话的 Token 用量采集下来，以图表与统计的形式放回你正在用的界面里——会话抽屉、每日面板、可自由配置的图表形式。交互参考 DSH 产品自带的「用量」，数据口径与它一致（计费口径，含缓存重读）。
 
-![dsh](./badge-dsh.svg)
-![node](./badge-node.svg)
-![license](./badge-license.svg)
+<p style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px;">
+  <img src="./badge-dsh.svg" alt="dsh" style="display: inline-block; margin: 0;" />
+  <img src="./badge-node.svg" alt="node" style="display: inline-block; margin: 0;" />
+  <img src="./badge-license.svg" alt="license" style="display: inline-block; margin: 0;" />
+</p>
 
 ## 🚀 快速开始
 
